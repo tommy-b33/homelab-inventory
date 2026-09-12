@@ -20,7 +20,7 @@ FROM node:22-alpine AS runtime
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=8787
+ENV PORT=8788
 ENV DATA_ROOT=/app
 ENV DIST_DIR=/app/web/dist
 
@@ -34,6 +34,6 @@ COPY --from=build /app/inventory /app/inventory
 COPY --from=build /app/builds /app/builds
 COPY --from=build /app/archive /app/archive
 
-EXPOSE 8787
+EXPOSE 8788
 WORKDIR /app/web
 CMD ["node", "server.mjs"]

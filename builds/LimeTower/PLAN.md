@@ -29,7 +29,7 @@ SKU: **HGST Ultrastar DC HC520** `HUH721212ALE601` (`disk-lt-hc520-12tb`) — **
 | Disks on **9305** | When filling more of 24 bays |
 | 10G switch | Still unboxed |
 | Cache upgrade | Optional; keep SX850 for now |
-| Inventory UI on LimeTower | Docker @ `inventory.home` — see `deploy/UNRAID.md` |
+| Inventory UI on LimeTower | Docker @ `inventory.home:8788` — see `deploy/UNRAID.md` (SWAG; not Spekarr’s 8787) |
 
 ## PCIe (reference)
 

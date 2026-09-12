@@ -1,6 +1,6 @@
 # Deploy on LimeTower (Unraid)
 
-LAN-only inventory UI at **`inventory.home`**, reached via Organizr → Nginx Proxy Manager → this container.
+LAN-only inventory UI at **`inventory.home`**, reached via Organizr → **SWAG** → this container.
 
 Do **not** port-forward this app to the internet (no auth; UI can write `parts.csv`).
 
@@ -8,8 +8,9 @@ Do **not** port-forward this app to the internet (no auth; UI can write `parts.c
 
 - GitHub repo: https://github.com/tommy-b33/homelab-inventory
 - Docker / Compose on Unraid
-- Nginx Proxy Manager (or any reverse proxy)
-- Local DNS that can resolve `*.home` (Pi-hole, AdGuard, router DNS, etc.)
+- **SWAG** (linuxserver) — already on LimeTower (`192.168.0.192:180` / `:1443`)
+- **Organizr** (`organizrv2` on `:8081`)
+- Local DNS that can resolve `inventory.home` (Pi-hole, AdGuard, router DNS, etc.)
 
 ## 1. Clone into appdata
 
@@ -20,6 +21,8 @@ cd /mnt/user/appdata/homelab-inventory
 
 ## 2. Start the container
 
+Host port **8788** (8787 is already **Spekarr** on LimeTower).
+
 ```bash
 docker compose up -d --build
 ```
@@ -27,46 +30,59 @@ docker compose up -d --build
 Sanity check (bypass proxy):
 
 ```text
-http://192.168.0.192:8787
+http://192.168.0.192:8788
 ```
-
-(Use LimeTower’s LAN IP if different.)
 
 ## 3. Local DNS
 
-Add an A record (or local DNS override):
-
 | Name | Value |
 |------|--------|
-| `inventory.home` | LimeTower IP **or** the host running NPM (if NPM is the only entry) |
+| `inventory.home` | `192.168.0.192` (LimeTower / SWAG) |
 
-Usually point `inventory.home` at the **NPM host** (often LimeTower itself).
+## 4. SWAG proxy config
 
-## 4. Nginx Proxy Manager
+Create (or drop in) a site config under SWAG’s nginx proxy-confs, e.g.  
+`/mnt/user/appdata/swag/nginx/proxy-confs/inventory.home.conf`:
 
-New **Proxy Host**:
+```nginx
+server {
+    listen 80;
+    listen 443 ssl;
+    listen [::]:80;
+    listen [::]:443 ssl;
 
-| Field | Value |
-|-------|--------|
-| Domain names | `inventory.home` |
-| Scheme | `http` |
-| Forward hostname / IP | `192.168.0.192` (or Docker DNS name if on a shared proxy network) |
-| Forward port | `8787` |
-| Websocket support | off |
-| Block common exploits | optional |
-| SSL | optional LAN cert; skip WAN “Force SSL” if you only use HTTP on LAN |
+    server_name inventory.home;
 
-Do **not** enable public/WAN access for this host.
+    include /config/nginx/ssl.conf;
+
+    location / {
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+        set $upstream_app 192.168.0.192;
+        set $upstream_port 8788;
+        set $upstream_proto http;
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    }
+}
+```
+
+Then restart SWAG (or reload nginx). Reachability:
+
+- Direct: `http://192.168.0.192:8788`
+- Via SWAG HTTP: `http://192.168.0.192:180` with Host `inventory.home`, or whatever hostname/port you already use for LAN SWAG access
+- Prefer bookmarking `http://inventory.home` once DNS points at LimeTower and SWAG is listening on 80 inside the container (mapped as host **180** unless you also hit it via another path)
+
+If your LAN habit is “always go through SWAG on :180/:1443”, use:
+
+```text
+https://inventory.home:1443
+```
+
+(or HTTP `:180`) — matching how your other apps are reached.
 
 ## 5. Organizr
 
-Add a tab/iframe pointing at:
-
-```text
-http://inventory.home
-```
-
-(or `https://inventory.home` if NPM terminates TLS on the LAN).
+Add a tab/iframe pointing at the same URL you use in a browser for `inventory.home` (include `:180` / `:1443` if that is how SWAG is published on the LAN).
 
 ## Day-to-day updates
 
@@ -74,7 +90,7 @@ http://inventory.home
 |--------|---------------------|
 | UI / Docker code | `git pull` then `docker compose up -d --build` |
 | `inventory/parts.csv` or `builds/*` from GitHub | `git pull` only (bind mounts; no rebuild) |
-| Cell edit in the hosted UI | Writes appdata `parts.csv` immediately — **commit & push** from the Unraid clone (or copy back to Windows) so GitHub stays source of truth |
+| Cell edit in the hosted UI | Writes appdata `parts.csv` immediately — **commit & push** from the Unraid clone so GitHub stays source of truth |
 
 ## Preferred edit loop
 

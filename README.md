@@ -45,7 +45,7 @@ Open **http://localhost:5173**.
 
 ### Hosted on LimeTower (LAN)
 
-See **[deploy/UNRAID.md](deploy/UNRAID.md)**: Docker on Unraid, **`inventory.home`** via NPM, Organizr iframe. GitHub: https://github.com/tommy-b33/homelab-inventory
+See **[deploy/UNRAID.md](deploy/UNRAID.md)**: Docker on Unraid, **`inventory.home`** via SWAG, Organizr iframe. GitHub: https://github.com/tommy-b33/homelab-inventory
 
 ```bash
 # on LimeTower
@@ -61,7 +61,7 @@ cd web
 npm run build && npm start
 ```
 
-Open **http://localhost:8787**.
+Open **http://localhost:8788**.
 
 ## Current builds
 
