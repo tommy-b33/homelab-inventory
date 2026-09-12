@@ -5,6 +5,7 @@
 ## Working
 
 - Chassis intact with FX-8350 platform (ASUS 1660 SUPER harvested for LimeTower)
+- Vengeance Pro DDR3 kits pulled → bin 2026-09-12
 
 ## Broken / blocked
 

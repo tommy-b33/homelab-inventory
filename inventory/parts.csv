@@ -106,7 +106,7 @@ cpu-fx8350,CPU,AMD,FX-8350,8C/8T 4GHz AM3+,1,installed,christian-pc,CHRISTIAN-PC
 mb-msi-990fxa-gaming,MB,MSI,990FXA-GAMING,ATX AM3+/AM3 990FX,1,installed,christian-pc,CHRISTIAN-PC,current,Confirmed
 case-corsair-c70,CASE,Corsair,C70 Military Green,CC-9011018-WW Vengeance mid tower,1,installed,christian-pc,CHRISTIAN-PC,current,Confirmed current chassis; same C70 family as old PCPP
 psu-evga-1000g1,PSU,EVGA,SuperNOVA 1000 G1,1000W 80+ Gold fully modular ATX,1,installed,christian-pc,CHRISTIAN-PC,current,Confirmed
-ram-cmy16gx3m2a1866c9r,RAM,Corsair,CMY16GX3M2A1866C9R,Vengeance Pro DDR3-1866 2x8GB CL9 red,2,installed,christian-pc,CHRISTIAN-PC,current,2 kits = 4×8GB sticks (32GB)
+ram-cmy16gx3m2a1866c9r,RAM,Corsair,CMY16GX3M2A1866C9R,Vengeance Pro DDR3-1866 2x8GB CL9 red,2,spare,bin,,,Pulled from CHRISTIAN-PC C70 2026-09-12; 2 kits = 4×8GB (32GB); photo: 2× ver8.22 + 2× ver3.24
 fan-cougar-cf-v12h,FAN,COUGAR,CF-V12H,120mm HDB Vortex 3-pin,2,installed,christian-pc,CHRISTIAN-PC,current,3-pin; in retired C70 box
 cooler-h100i-christian,COOLER,Corsair,H100i,240mm AIO,1,installed,christian-pc,CHRISTIAN-PC,current,Retired C70; separate from TOMB-PC H100i
 ssd-sandisk-sdssdx-240,STORAGE,SanDisk,SDSSDX-240G,240GB 2.5 SATA SSD,1,spare,bin,,,Pulled from retired CHRISTIAN-PC

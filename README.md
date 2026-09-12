@@ -51,8 +51,10 @@ See **[deploy/UNRAID.md](deploy/UNRAID.md)**: Docker on Unraid, **`inventory.hom
 # on LimeTower
 git clone https://github.com/tommy-b33/homelab-inventory.git /mnt/user/appdata/homelab-inventory
 cd /mnt/user/appdata/homelab-inventory
-docker compose up -d --build
+docker-compose up -d --build
 ```
+
+(Unraid: use `docker-compose` with a hyphen if `docker compose` fails.)
 
 Local preview of the production server:
 

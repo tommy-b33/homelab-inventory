@@ -25,7 +25,7 @@ Christian’s previous PC (Corsair C70). Retired; he now uses **DESKTOP-AITBP8B*
 | Motherboard | **MSI 990FXA-GAMING** | AM3+ |
 | CPU | **AMD FX-8350** | |
 | PSU | **EVGA SuperNOVA 1000 G1** | |
-| RAM | **Corsair Vengeance Pro** `CMY16GX3M2A1866C9R` | **2 kits** = 4×8 GB DDR3-1866 (**32 GB**) |
+| RAM | — | **CMY16GX3M2A1866C9R** 2 kits (4×8 GB) pulled → **bin** 2026-09-12 |
 | GPU | — | **ASUS 1660 SUPER** harvested → **LimeTower** PLAN |
 | Cooler | **Corsair H100i** | 240 mm AIO; not the TOMB-PC unit |
 | SSD | — | **SDSSDX-240G** pulled → **bin** |
