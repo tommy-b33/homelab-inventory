@@ -7,7 +7,7 @@ import { serializePartsCsv, validateParts } from "./partsCsv.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dataRoot = path.resolve(process.env.DATA_ROOT || path.join(__dirname, ".."));
 const distDir = path.resolve(process.env.DIST_DIR || path.join(__dirname, "dist"));
-const port = Number(process.env.PORT || 8788);
+const port = Number(process.env.PORT || 8787);
 
 const inventoryDir = path.join(dataRoot, "inventory");
 const buildsDir = path.join(dataRoot, "builds");

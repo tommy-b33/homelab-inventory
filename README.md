@@ -61,7 +61,7 @@ cd web
 npm run build && npm start
 ```
 
-Open **http://localhost:8788**.
+Open **http://localhost:8787**.
 
 ## Current builds
 

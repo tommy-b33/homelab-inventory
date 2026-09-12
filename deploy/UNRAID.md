@@ -21,7 +21,7 @@ cd /mnt/user/appdata/homelab-inventory
 
 ## 2. Start the container
 
-Host port **8788** (8787 is already **Spekarr** on LimeTower).
+Host port **8787** (free on LimeTower). Spekarr uses host **8788** (maps container 8787→8788).
 
 ```bash
 docker compose up -d --build
@@ -30,7 +30,7 @@ docker compose up -d --build
 Sanity check (bypass proxy):
 
 ```text
-http://192.168.0.192:8788
+http://192.168.0.192:8787
 ```
 
 ## 3. Local DNS
@@ -59,7 +59,7 @@ server {
         include /config/nginx/proxy.conf;
         include /config/nginx/resolver.conf;
         set $upstream_app 192.168.0.192;
-        set $upstream_port 8788;
+        set $upstream_port 8787;
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
     }
@@ -68,7 +68,7 @@ server {
 
 Then restart SWAG (or reload nginx). Reachability:
 
-- Direct: `http://192.168.0.192:8788`
+- Direct: `http://192.168.0.192:8787`
 - Via SWAG HTTP: `http://192.168.0.192:180` with Host `inventory.home`, or whatever hostname/port you already use for LAN SWAG access
 - Prefer bookmarking `http://inventory.home` once DNS points at LimeTower and SWAG is listening on 80 inside the container (mapped as host **180** unless you also hit it via another path)
 

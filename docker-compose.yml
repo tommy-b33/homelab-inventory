@@ -4,10 +4,10 @@ services:
     container_name: homelab-inventory
     restart: unless-stopped
     ports:
-      # 8787 is Spekarr on LimeTower — use 8788
-      - "8788:8788"
+      # Host 8787 is free on LimeTower. Spekarr is container:8787 → host:8788.
+      - "8787:8787"
     environment:
-      PORT: "8788"
+      PORT: "8787"
       DATA_ROOT: /app
       DIST_DIR: /app/web/dist
     volumes:
