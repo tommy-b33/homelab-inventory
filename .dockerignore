@@ -1,0 +1,10 @@
+node_modules
+web/node_modules
+web/dist
+.git
+.vs
+*.log
+.DS_Store
+.vite
+**/.cursor
+agent-transcripts

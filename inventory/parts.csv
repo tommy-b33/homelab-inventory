@@ -1,0 +1,145 @@
+id,category,manufacturer,model,key_specs,qty,condition,location,assigned_build,for_phase,notes
+case-define7xl,CASE,Fractal Design,Define 7 XL,EE-ATX/SSI-EEB FD-C-DEF7X-xx,1,ordered,inbound,Knight,planned,Ordered; Knight LLM + T4+ destination
+mb-x10dri-t4plus,MB,Supermicro,X10DRi-T4+,EE-ATX 13.68x13 24 DIMM quad 10G X540 square ILM,1,spare,bin,Knight,planned,Square ILM (not narrow); LLM board in Define 7 XL
+mb-x10dri-t,MB,Supermicro,X10DRi-T,Dual LGA2011-3 16 DIMM dual 10G X540 narrow ILM,1,installed,zhenloong,LimeTower,current,BIOS 3.4a; BMC 192.168.0.78; cutover 2026-09-07; dual 2690 + 128GB; Pro USB
+cpu-2698v4-1,CPU,Intel,E5-2698 v4,20C/40T 135W LGA2011-3,1,installed,knight,Knight,current,Matched pair; currently installed
+cpu-2698v4-2,CPU,Intel,E5-2698 v4,20C/40T 135W LGA2011-3,1,installed,knight,Knight,current,Matched pair
+cpu-2690v4-1,CPU,Intel,E5-2690 v4,14C/28T LGA2011-3,1,installed,zhenloong,LimeTower,current,LimeTower production pair on X10DRi-T
+cpu-2690v4-2,CPU,Intel,E5-2690 v4,14C/28T LGA2011-3,1,installed,zhenloong,LimeTower,current,LimeTower production pair on X10DRi-T
+cpu-2696v4-china-1,CPU,Intel,E5-2696 v4 (suspect),LGA2011-3 pull labeled 2696,1,dead,bin,,,China pull eBay 18-14564-93768; confirmed no-POST / 5s power-cycle on X10DRi-T 2026-09-06 (2690 POSTs same board)
+cpu-2696v4-china-2,CPU,Intel,E5-2696 v4 (suspect),LGA2011-3 pull labeled 2696,1,dead,bin,,,China pull eBay 18-14564-93768; confirmed no-POST / 5s power-cycle on X10DRi-T 2026-09-06
+ram-kvr24-rc1,RAM,Kingston,KVR24R17S4/16I,16GB DDR4-2400 ECC RDIMM 1Rx4 RC1,4,installed,knight,Knight,current,12 were on Knight; 8 moved to LimeTower -T bring-up; interim mix OK until Knight 2nd round
+ram-ksm24-rc2,RAM,Kingston,KSM24RS4/16MEI,16GB DDR4-2400 ECC RDIMM 1Rx4 RC2,3,installed,knight,Knight,current,Do not mix with RC1 on same CPU long-term; +1 inbound; Knight interim OK
+ram-ksm24-rc2-inbound,RAM,Kingston,KSM24RS4/16MEI,16GB DDR4-2400 ECC RDIMM 1Rx4 RC2,1,ordered,inbound,Knight,planned,Completes 4x RC2
+ram-limetower-ddr4-16g,RAM,Kingston,KVR24R17S4/16I,16GB DDR4-2400 ECC RDIMM 1Rx4 RC1,8,installed,zhenloong,LimeTower,current,From Knight RC1 pool; 4+4 in P1 A1-D1 / P2 E1-H1; 128GB @ 2400; production
+cooler-dynatron-r17-1,COOLER,Dynatron,R17,Square ILM 3U,1,spare,bin,Knight,planned,Square ILM — fits T4+ (Knight); does NOT fit narrow ILM (X10DRi-T / CLN4)
+cooler-dynatron-r17-2,COOLER,Dynatron,R17,Square ILM 3U,1,spare,bin,Knight,planned,Square ILM — fits T4+ (Knight); does NOT fit narrow ILM (X10DRi-T / CLN4)
+cooler-nhu9dx-1,COOLER,Noctua,NH-U9DX i4,Narrow ILM (LGA2011),1,installed,zhenloong,LimeTower,current,On LimeTower -T / 2690 (narrow ILM)
+cooler-nhu9dx-2,COOLER,Noctua,NH-U9DX i4,Narrow ILM (LGA2011),1,installed,zhenloong,LimeTower,current,On LimeTower -T / 2690 (narrow ILM)
+psu-evga-1300g2-1,PSU,EVGA,SuperNOVA 1300 G2,1300W modular ATX,1,installed,knight,Knight,current,Prefer healthy unit for Knight/P40s; dual EPS for T4+; has cable set (G2 pinout only)
+psu-evga-1300g2-2,PSU,EVGA,SuperNOVA 1300 G2,1300W modular ATX,1,spare,bin,,,Bare (no cables) and/or bad SATA rail — spare/sell; not LimeTower primary
+psu-evga-1300g2-3,PSU,EVGA,SuperNOVA 1300 G2,1300W modular ATX refurb,1,installed,zhenloong,LimeTower,current,LimeTower production; Molex wall + 1660 PCIe; G1 PERIF metered OK for extra Molex
+cable-evga-g2-sata,OTHER,EVGA,G2/P2/T2 SATA modular,Extra SATA for 1300 G2,2,planned,buy,LimeTower,planned,Refurb only includes 1× SATA; buy extras same pinout family only
+cable-evga-g2-molex,OTHER,EVGA,G2/P2/T2 peripheral Molex,4-pin Molex for ZhenLoong disk wall,6,planned,buy,LimeTower,planned,Backplane needs 6× Molex; prefer genuine G2 peripheral cables
+cable-evga-g2-pcie-1660,OTHER,EVGA,G2/P2/T2 PCIe VGA,8-pin or 6+2 for 1660 SUPER,1,planned,bin,LimeTower,planned,From G2 kit (refurb has 6× VGA) — plug Slot4 1660 before load
+nvme-duo-dell,STORAGE,Dell,Ultra-Speed Duo,Dual M.2 PCIe carrier bifurcation,1,installed,knight,Knight,current,LLM cache / models
+nvme-kioxia-1,STORAGE,Kioxia,KXG70PNV2T04,2TB NVMe M.2 2280 PCIe Gen4 x4,1,installed,knight,Knight,current,cache btrfs raid0 (was id nvme-kioxia-xg8-1; model was wrongly XG8/KXG8AZNV2T04)
+nvme-kioxia-2,STORAGE,Kioxia,KXG70PNV2T04,2TB NVMe M.2 2280 PCIe Gen4 x4,1,installed,knight,Knight,current,cache btrfs raid0 (was id nvme-kioxia-xg8-2; model was wrongly XG8/KXG8AZNV2T04)
+gpu-p40-1,GPU,NVIDIA,Tesla P40,24GB GDDR5 Pascal passive,1,installed,knight,Knight,current,Define 7 XL + shrouds
+gpu-p40-2,GPU,NVIDIA,Tesla P40,24GB GDDR5 Pascal passive,1,installed,knight,Knight,current,Second P40
+usb-unraid-sandisk-trial,STORAGE,SanDisk,USB 3.2 Gen1,30.8GB Unraid boot flash trial,1,installed,knight,Knight,current,Unraid Trial boot; Knight 192.168.0.77
+fan-corsair-sp120l-claudia,FAN,Corsair,SP120L,120mm 4-pin PWM,2,installed,claudia-pc,CLAUDIA-PC,current,4-pin PWM; Claudia case
+fan-bionix-p120-claudia,FAN,ARCTIC,BioniX P120 Yellow,ACFAN00117A 120mm 4-pin PWM PST,1,installed,claudia-pc,CLAUDIA-PC,current,4-pin PWM; desk/monitor fan (DP→HDMI now on hand)
+fan-bionix-p120-spare,FAN,ARCTIC,BioniX P120 Yellow,ACFAN00117A 120mm 4-pin PWM PST,3,spare,bin,,,4-pin PWM; unassigned spares
+fan-p12-pro-pst,FAN,ARCTIC,P12 Pro PST,120mm 4-pin PWM 600-3000 RPM,3,installed,zhenloong,LimeTower,current,Mid wall FANA/FANB/FAN4 — installed 2026-09-07 (replaced GTFAN; direct to MB)
+fan-nfa8-rear,FAN,Noctua,NF-A8,80mm 4-pin PWM,2,installed,zhenloong,LimeTower,current,4-pin PWM; ZhenLoong rear; stay with LimeTower
+fan-corsair-a1225m12s,FAN,Corsair,A1225M12S,120mm 3-pin,3,spare,bin,,,3-pin
+fan-corsair-ml120,FAN,Corsair,ML120,CO-9050039-WW 120mm 4-pin PWM,2,spare,bin,,,4-pin PWM; twin pack
+fan-scythe-sy1225sl12sh,FAN,Scythe,SY1225SL12SH,120mm 3-pin,3,spare,bin,,,3-pin
+fan-scythe-sy1225sl12hs,FAN,Scythe,SY1225SL12HS,120mm 3-pin,1,spare,bin,,,3-pin
+fan-rosewill-d12sm12gp,FAN,Rosewill,D12SM-12(GP),120mm Molex 4-pin,1,spare,bin,,,Legacy Molex 4-pin (not PWM header)
+fan-rosewill-d12sl12,FAN,Rosewill,D12SL-12,120mm Molex 4-pin,1,spare,bin,,,Legacy Molex 4-pin (not PWM header); old
+fan-rosewill-d12sh12,FAN,Rosewill,D12SH-12,120mm 3-pin,1,spare,bin,,,3-pin
+fan-amb-fd12025b1l,FAN,A.M.B.,FD12025B1L,120mm 3-pin + Molex 4-pin,1,spare,bin,,,3-pin MB + 4-pin Molex
+fan-thermaltake-tt1225,FAN,Thermaltake,TT-1225,120mm 3-pin,1,spare,bin,,,3-pin
+fan-cm-a12025-20rb,FAN,Cooler Master,A12025-20RB-3BN-F1,120mm 3-pin,2,spare,bin,,,3-pin
+fan-avc-ds12025b12e,FAN,AVC,DS12025B12E,120mm 4-pin,1,spare,bin,,,4-pin
+fan-newegg-led-120,FAN,Unknown,Newegg 33-LED 120mm,120mm 3-pin LED anti-vibe,1,spare,bin,,,3-pin; order was 3 — 2 more believed inside unknown builds
+fan-zalman-za1225asl-3pin,FAN,Zalman,ZA1225ASL,120mm 3-pin,1,spare,bin,,,3-pin
+fan-zalman-za1225asl-molex,FAN,Zalman,ZA1225ASL,120mm Molex 4-pin,2,spare,bin,,,Legacy Molex 4-pin
+fan-gtfan-12038-zhenloong,FAN,GTFAN/Daohe,12038-02A,120x38mm 4-pin,3,spare,bin,,,Tach OK direct to MB; **too loud for basement** — pulled 2026-09-07 for P12 Pros; spare/sell
+fan-antec-3speed-12038,FAN,Antec,3-Speed 120x38,120x38mm Molex 4-pin,1,spare,bin,,,Legacy Molex; 3-speed switch
+fan-fractal-gp12,FAN,Fractal Design,Dynamic X2 GP-12,120mm 3-pin,2,spare,bin,,,3-pin
+fan-phoenix-led-120,FAN,Unknown,Phoenix LED 120mm,120mm 4-pin and/or Molex LED,3,spare,bin,,,Dusty; clear blades; hub sticker phoenix/brushless; pic inventory
+fan-arctic-f8-pwm-pst,FAN,ARCTIC,F8 PWM PST,80mm 4-pin PWM daisy-chain,1,spare,bin,,,4-pin PWM + PST daisy plug
+fan-noname-011388-80,FAN,Unknown,DC fan motor 011388,80mm 2-pin,1,spare,bin,,,2-pin straight MB plug (not Molex); old
+fan-apevia-df8025,FAN,Apevia,DF8025,80mm,2,spare,bin,,,Pink blades
+fan-jxf-jxf8025,FAN,JXF,JXF8025,80mm 3-pin,2,spare,bin,,,3-pin; ex-ZhenLoong rear/backplate stock
+fan-ftc-fd07015b1h,FAN,F.T.C.,FD07015B1H,70mm slim 3-pin,1,spare,bin,,,Slim 70mm; 3-pin
+fan-adda-ad0912us,FAN,ADDA,AD0912US-A70GL,90mm,1,spare,bin,,,2 cables cut short — repair or scrap
+fan-noctua-nfp14r-redux,FAN,Noctua,NF-P14r redux,140mm round frame (120mm holes),1,spare,bin,,,140mm blades; mounts in 120mm pattern; round (not square) frame
+mini-acepc-ak1,OTHER,ACEPC,AK1,Mini PC J3455 8GB RAM 64GB ROM,1,spare,bin,ACEPC-AK1,current,Last known overheated — may be dead; verify before reuse
+case-zhenloong-24,CASE,ZhenLoong,4U-24-bay,4U 19in 24-bay hot-swap 6Gb backplane,1,installed,zhenloong,LimeTower,current,Production LimeTower chassis (cutover 2026-09-07)
+mb-x10drh-cln4,MB,Supermicro,X10DRH-CLN4,Dual LGA2011-3 16 DIMM IPMI BIOS 3.4 narrow ILM,1,spare,bin,,,Vacated ZhenLoong for LimeTower -T; spare/sell
+hba-limetower-sas2008,HBA,Broadcom/LSI,SAS2008 Falcon,SAS-2 PCIe MPT (9211-8i class),1,spare,bin,,,Vacated NORCO cutover 2026-09-07; spare/sell
+usb-unraid-limetower,STORAGE,SanDisk,Cruzer Fit,15.4GB Unraid Pro boot,1,installed,zhenloong,LimeTower,current,Unraid Pro boot; LimeTower 192.168.0.192; ZhenLoong post-cutover
+case-norco-rpc4308,CASE,NORCO,RPC-4308,4U short-depth 15.25in 8x hot-swap,1,spare,bin,,,Vacated LimeTower chassis; spare/sell
+case-thermaltake-core-v1,CASE,Thermaltake,Core V1,Mini-ITX cube CA-1B8-00S1WN-00,1,spare,bin,,,Not in use; contents TBD — inventory internals later
+case-8bay-pclink,CASE,Unknown,8-bay PC Link DAS,8x hot-swap dual eSATA built-in PSU,1,spare,bin,,,Empty; PC Link 1/2 rear; 115/230 PSU; sticker 16132016021300036 Taiwan — brand TBD (Mediasonic-class?)
+case-antec-fusion-htpc,CASE,Antec,Fusion Remote Black,Micro-ATX HTPC / media center,1,installed,htpc,HTPC,current,First media PC; unused; contents TBD
+psu-pcppc-modxstream-500,PSU,PC Power & Cooling,ModXStream Pro 500W,500W 80+ semi-modular ATX,1,installed,htpc,HTPC,current,Likely same-order as Fusion — verify when opened
+ram-gskill-ddr2-4gb-htpc,RAM,G.SKILL,F2-8500CL5D-4GBPK,4GB 2x2GB DDR2-1066,1,installed,htpc,HTPC,current,Likely same-order as Fusion — verify when opened
+switch-netgear-jgs524,NIC,NETGEAR,JGS524,24× 1GbE (10/100/1000) unmanaged desktop/rackmount,1,spare,bin,,,LAN switch; not assigned to a build
+switch-dlink-dgs108,NIC,D-Link,DGS-108,8× 1GbE (10/100/1000) unmanaged desktop,1,installed,desk,,,Desk bench switch; LimeTower bring-up uplink (Unraid showed 100 Mbps — check cable/nego)
+cache-adata-sx850,STORAGE,ADATA,SX850,256GB SSD btrfs cache,1,installed,zhenloong,LimeTower,current,S/N 2H4220014093; Unraid cache pool
+disk-lt-parity-k7gl6kkl,STORAGE,HGST,HDN726040ALE614,4TB SATA Deskstar NAS,1,dead,bin,,,S/N K7GL6KKL; retired 2026-09-07 — replaced by 12TB HC520 Parity
+disk-lt-parity-hc520-8hk5r4eh,STORAGE,HGST,HUH721212ALE601,12TB SATA Ultrastar DC HC520,1,dead,bin,LimeTower,,S/N 8HK5R4EH; **refurb** (goHardDrive/eBay); POH 31795; disabled 2026-09-09 (4831 errs); SMART realloc 21 / pending 8 / CRC 0; pulled; **RMA RA93506** 2026-09-09 → GoHardDrive La Puente CA
+disk-lt-parity-hc520-8djjzluy,STORAGE,HGST,HUH721212ALE601,12TB SATA Ultrastar DC HC520,1,installed,zhenloong,LimeTower,current,S/N 8DJJZLUY; **refurb**; Unraid **Parity**; rebuild **complete** 2026-09-10 (~20h, 0 errors); SMART OK (realloc/pending/CRC 0; no ATA errors; POH 31869)
+disk-lt-disk8-hc520-8hk38k6h,STORAGE,HGST,HUH721212ALE601,12TB SATA Ultrastar DC HC520,1,installed,zhenloong,LimeTower,current,S/N 8HK38K6H; **refurb**; Unraid **Disk 8**; added 2026-09-11; SMART OK (realloc/pending/CRC 0; no ATA errors; POH 31752)
+disk-lt-spare-hc520-8hh6p98h,STORAGE,HGST,HUH721212ALE601,12TB SATA Ultrastar DC HC520,1,spare,zhenloong,LimeTower,current,S/N 8HH6P98H; **refurb**; unassigned; UNC error log; long SMART before add as data
+disk-lt-parity2-hc520-8hkzkwdh,STORAGE,HGST,HUH721212ALE601,12TB SATA Ultrastar DC HC520,1,installed,zhenloong,LimeTower,current,S/N 8HKZKWDH; **refurb**; Unraid **Parity 2**; sync complete 2026-09-09 (~20h, 0 errors); SMART OK (realloc/pending/CRC 0; POH 35166)
+disk-lt-disk7-k3h14a7b,STORAGE,HGST,HDN726040ALE614,4TB SATA Deskstar NAS xfs,1,installed,zhenloong,LimeTower,current,S/N K3H14A7B; Unraid **Disk 7**; ex-Parity 2; added 2026-09-11
+
+disk-lt-disk1-k7gdz8ul,STORAGE,HGST,HDN726040ALE614,4TB SATA Deskstar NAS xfs,1,installed,zhenloong,LimeTower,current,S/N K7GDZ8UL; Unraid **Disk 1**
+disk-lt-disk2-k7gbuv7b,STORAGE,HGST,HDN726040ALE614,4TB SATA Deskstar NAS xfs,1,installed,zhenloong,LimeTower,current,S/N K7GBUV7B; Unraid **Disk 2**
+disk-lt-disk3-ws23wdte,STORAGE,Seagate,ST4000NE001-2MA101,4TB SATA IronWolf Pro xfs,1,installed,zhenloong,LimeTower,current,S/N WS23WDTE; Unraid **Disk 3**
+disk-lt-disk4-ws23wh18,STORAGE,Seagate,ST4000NE001-2MA101,4TB SATA IronWolf Pro xfs,1,installed,zhenloong,LimeTower,current,S/N WS23WH18; Unraid **Disk 4**
+disk-lt-disk5-ws23wf05,STORAGE,Seagate,ST4000NE001-2MA101,4TB SATA IronWolf Pro xfs,1,installed,zhenloong,LimeTower,current,S/N WS23WF05; Unraid **Disk 5**
+disk-lt-disk6-k3h1nk2b,STORAGE,HGST,HDN726040ALE614,4TB SATA Deskstar NAS xfs,1,installed,zhenloong,LimeTower,current,S/N K3H1NK2B; Unraid **Disk 6**
+disk-lt-hc520-12tb,STORAGE,HGST,HUH721212ALE601,12TB SATA Ultrastar DC HC520 256MB 7200rpm,0,ordered,inbound,LimeTower,planned,**Refurb** lot; boxed count now assigned/spared — track individuals; still need more for 3× data if short
+
+mb-asus-z8pe-d12,MB,ASUS,Z8PE-D12 / Z8PN-E-D12(X),Dual LGA1366 Rev 1.0x BIOS 1401,1,spare,bin,,,Vacated NORCO; spare/sell
+cpu-e5520-1,CPU,Intel,Xeon E5520,4C/8T 2.27GHz LGA1366,1,spare,bin,,,Vacated NORCO; spare/sell
+cpu-e5520-2,CPU,Intel,Xeon E5520,4C/8T 2.27GHz LGA1366,1,spare,bin,,,Vacated NORCO; spare/sell
+ram-limetower-ddr3-96gb,RAM,Unknown,DDR3 ECC multi-bit,96GB total,1,spare,bin,,,Vacated NORCO; not usable on X10DRi-T; spare/sell
+mb-spare-iln4,MB,Supermicro,X10DRH-iLN4,Spare dual Xeon board,1,spare,bin,,,Return/sell candidate
+boot-ocz-diesel-old,STORAGE,OCZ,Diesel USB,Old Unraid license stick,1,dead,bin,,,Blacklisted
+mb-msi-x570-tomahawk,MB,MSI,MAG X570 TOMAHAWK WIFI,MS-7C84 AM4 X570 WiFi BIOS 1.C0,1,installed,tomb-pc-2077,TOMB-PC-2077,current,Desktop daily driver
+cpu-5950x,CPU,AMD,Ryzen 9 5950X,16C/32T 105W AM4 Vermeer,1,installed,tomb-pc-2077,TOMB-PC-2077,current,
+cooler-ek-aio-280-drgb,COOLER,EK,AIO 280 D-RGB,280mm AIO EK-Vardar PWM fans,1,installed,tomb-pc-2077,TOMB-PC-2077,current,Desktop daily driver
+ram-corsair-veng-3600,RAM,Corsair,CMK32GX4M2Z3600C18,Vengeance 2x16GB DDR4-3600 CL18,1,installed,tomb-pc-2077,TOMB-PC-2077,current,Kit 32GB; DOCP/XMP on — ~DDR4-3600
+gpu-rx6800-gigabyte,GPU,Gigabyte,Radeon RX 6800,16GB GDDR6 Navi 21,1,installed,tomb-pc-2077,TOMB-PC-2077,current,
+gpu-gtx970-wf3,GPU,Gigabyte,GV-N970WF3OC-4GD,GTX 970 4GB WINDFORCE 3X OC,1,spare,bin,,,Unassigned spare
+gpu-gtx770-oc,GPU,Gigabyte,GV-N770OC-4GD,GTX 770 4GB OC Rev 2.0,1,installed,htpc,HTPC,current,Suspected in Antec Fusion HTPC — verify when opened (was thought loose in bin)
+gpu-gtx1660s-gigabyte,GPU,Gigabyte,GV-N166SGAMING-6GD,GTX 1660 SUPER GAMING 6GB,1,installed,claudia-pc,CLAUDIA-PC,current,Installed; HDMI + DP→HDMI dual Acer; S/N SN202841023388
+cpu-fx8350,CPU,AMD,FX-8350,8C/8T 4GHz AM3+,1,installed,christian-pc,CHRISTIAN-PC,current,Confirmed; Vishera
+mb-msi-990fxa-gaming,MB,MSI,990FXA-GAMING,ATX AM3+/AM3 990FX,1,installed,christian-pc,CHRISTIAN-PC,current,Confirmed
+case-corsair-c70,CASE,Corsair,C70 Military Green,CC-9011018-WW Vengeance mid tower,1,installed,christian-pc,CHRISTIAN-PC,current,Confirmed current chassis; same C70 family as old PCPP
+psu-evga-1000g1,PSU,EVGA,SuperNOVA 1000 G1,1000W 80+ Gold fully modular ATX,1,installed,christian-pc,CHRISTIAN-PC,current,Confirmed
+ram-cmy16gx3m2a1866c9r,RAM,Corsair,CMY16GX3M2A1866C9R,Vengeance Pro DDR3-1866 2x8GB CL9 red,2,installed,christian-pc,CHRISTIAN-PC,current,2 kits = 4×8GB sticks (32GB)
+fan-cougar-cf-v12h,FAN,COUGAR,CF-V12H,120mm HDB Vortex 3-pin,2,installed,christian-pc,CHRISTIAN-PC,current,3-pin; in retired C70 box
+cooler-h100i-christian,COOLER,Corsair,H100i,240mm AIO,1,installed,christian-pc,CHRISTIAN-PC,current,Retired C70; separate from TOMB-PC H100i
+ssd-sandisk-sdssdx-240,STORAGE,SanDisk,SDSSDX-240G,240GB 2.5 SATA SSD,1,spare,bin,,,Pulled from retired CHRISTIAN-PC
+hdd-wd-green-500-christian,STORAGE,Western Digital,WD Green 500GB,500GB 3.5 HDD,1,installed,christian-pc,CHRISTIAN-PC,current,Retired C70; exact WD Green SKU TBD
+gpu-rx6800-amd-desktop-aitbp8b,GPU,AMD,Radeon RX 6800,16GB GDDR6 Navi 21,1,installed,desktop-aitbp8b,DESKTOP-AITBP8B,current,Christian daily driver; board partner TBD — not Gigabyte on TOMB-PC-2077
+mb-ga-z87x-ud4h,MB,Gigabyte,GA-Z87X-UD4H,ATX LGA1150 Z87,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop; unused in corner
+cpu-4770k,CPU,Intel,Core i7-4770K,4C/8T 3.5GHz LGA1150,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop; unused in corner
+cooler-h100i-tomb,COOLER,Corsair,H100i,240mm AIO,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop
+ram-veng-pro-ddr3-tomb,RAM,Corsair,Vengeance Pro DDR3-1866,16GB 2x8 CL9,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop
+ssd-samsung-840pro-256,STORAGE,Samsung,840 Pro,256GB 2.5 SATA SSD,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop
+ssd-sandisk-extreme2-480,STORAGE,SanDisk,Extreme II,480GB 2.5 SATA SSD,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop
+gpu-gtx970-ixoc,GPU,Gigabyte,GV-N970IXOC-4GD,GTX 970 4GB Mini-ITX OC,1,installed,tomb-pc,TOMB-PC,current,Different SKU from WF3OC spare in bin
+case-nzxt-phantom-410,CASE,NZXT,Phantom 410 Red,CA-PH410-R1 ATX mid tower,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop; unused in corner
+psu-antec-hcg-900,PSU,Antec,High Current Gamer 900W,900W 80+ Bronze ATX,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop
+case-meshify-c-white,CASE,Fractal Design,Meshify C White TG,FD-CA-MESH-C-WT-TGC ATX mid tower,1,installed,tomb-pc-2077,TOMB-PC-2077,current,Desktop daily driver chassis
+psu-superflower-leadex3-750,PSU,Super Flower,Leadex III Gold 750W,750W 80+ Gold fully modular ATX,1,installed,tomb-pc-2077,TOMB-PC-2077,current,Desktop daily driver
+nvme-crucial-p5p-c,STORAGE,Crucial,CT2000P5PSSD8,P5 Plus 2TB NVMe PCIe4,1,installed,tomb-pc-2077,TOMB-PC-2077,current,Boot C:; S/N 23023DA6002D; health ~98%
+nvme-crucial-p5p-d,STORAGE,Crucial,CT2000P5PSSD8,P5 Plus 2TB NVMe PCIe4,1,installed,tomb-pc-2077,TOMB-PC-2077,current,Data D:; S/N 23023DA60079; health ~99%
+mb-msi-b350-tomahawk-arctic,MB,MSI,B350 TOMAHAWK ARCTIC,ATX AM4,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+cpu-1700x,CPU,AMD,Ryzen 7 1700X,8C/16T 3.4GHz AM4,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+cooler-gammaxx-400-white,COOLER,Deepcool,GAMMAXX 400 White,Air cooler,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+ram-ballistix-2666-claudia,RAM,Crucial,Ballistix Sport LT DDR4-2666,16GB 2x8 CL16,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+nvme-wd-black-500-claudia,STORAGE,Western Digital,Black NVMe 500GB,M.2 2280 PCIe3 x4,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+gpu-gtx1060-asus-dual-3g,GPU,Asus,DUAL GTX 1060 3GB,3GB GDDR5,1,spare,bin,,,Was LimeTower transcoder candidate; superseded by ASUS 1660 SUPER from CHRISTIAN-PC
+gpu-gtx1660s-asus-limetower,GPU,ASUS,DUAL-GTX1660S-O6G-EVO,GTX 1660 SUPER 6GB,1,installed,zhenloong,LimeTower,current,From CHRISTIAN-PC; Unraid NVENC; S/N KAC0YZ01X5396JN; Slot4 (CPU2 x16)
+hba-9305-16i,HBA,Broadcom/LSI,9305-16i,SAS3 IT-mode 16-port PCIe x8 SFF-8643,1,installed,zhenloong,LimeTower,current,S/N SP01015106; Slot1; array currently on onboard SATA; HBA ready for expansion
+cable-dp-hdmi-claudia,OTHER,Best Buy,DP-to-HDMI,DisplayPort to HDMI for dual Acer,1,installed,claudia-pc,CLAUDIA-PC,current,2nd monitor path (GPU DP → Acer HDMI)
+case-zalman-z9-neo,CASE,Zalman,Z9 NEO,ATX mid tower,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+psu-thermaltake-tr2s-550,PSU,Thermaltake,TR2 S 550W,550W 80+ ATX,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+odd-lg-gh24nsc0b,OTHER,LG,GH24NSC0B,DVD/CD writer,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
+monitor-acer-ed242qr-1,MONITOR,Acer,ED242QR wi,23.6in 1080p 75Hz FreeSync curved,1,installed,claudia-pc,CLAUDIA-PC,current,Current dual setup (HDMI+VGA)
+monitor-acer-ed242qr-2,MONITOR,Acer,ED242QR wi,23.6in 1080p 75Hz FreeSync curved,1,installed,claudia-pc,CLAUDIA-PC,current,Second of dual pair
+printer-canon-lbp646cdw,OTHER,Canon,imageCLASS LBP646Cdw,Wireless color laser print-only 6929C008,1,spare,bin,,,Home office color laser
+switch-netgear-gs316pp,NIC,NETGEAR,GS316PP,16× 1GbE (10/100/1000) PoE+ rackmount GS316PP100NAS 183W,1,spare,bin,,,Waiting to be used
+amp-monoprice-16152,OTHER,Monoprice,Compact Stereo Hybrid Tube Amp,15W/ch Bluetooth 4.0 aptX P/N 16152,1,spare,bin,,,Tube pre + class AB; waiting to be used
+nic-supermicro-aoc-stg-i2t,NIC,Supermicro,AOC-STG-i2T,2× 10GBase-T RJ45 PCIe Intel X540,1,spare,bin,,,Dual 10GbE; not needed on LimeTower (X10DRi-T has onboard dual 10G) or Knight T4+ (quad 10G) — sell or hold
