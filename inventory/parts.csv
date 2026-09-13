@@ -143,3 +143,4 @@ printer-canon-lbp646cdw,OTHER,Canon,imageCLASS LBP646Cdw,Wireless color laser pr
 switch-netgear-gs316pp,NIC,NETGEAR,GS316PP,16× 1GbE (10/100/1000) PoE+ rackmount GS316PP100NAS 183W,1,spare,bin,,,Waiting to be used
 amp-monoprice-16152,OTHER,Monoprice,Compact Stereo Hybrid Tube Amp,15W/ch Bluetooth 4.0 aptX P/N 16152,1,spare,bin,,,Tube pre + class AB; waiting to be used
 nic-supermicro-aoc-stg-i2t,NIC,Supermicro,AOC-STG-i2T,2× 10GBase-T RJ45 PCIe Intel X540,1,spare,bin,,,Dual 10GbE; not needed on LimeTower (X10DRi-T has onboard dual 10G) or Knight T4+ (quad 10G) — sell or hold
+ssd-corsair-force-le200-240,STORAGE,Corsair,CSSD-F240GBLE200B,Force LE 200 240GB 2.5 SATA3 SSD,1,spare,bin,,,Found in bin 2026-09-13; S/N 1703793900012260015E; RST0054
