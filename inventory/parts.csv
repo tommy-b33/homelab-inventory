@@ -23,8 +23,8 @@ cable-evga-g2-sata,OTHER,EVGA,G2/P2/T2 SATA modular,Extra SATA for 1300 G2,2,pla
 cable-evga-g2-molex,OTHER,EVGA,G2/P2/T2 peripheral Molex,4-pin Molex for ZhenLoong disk wall,6,planned,buy,LimeTower,planned,Backplane needs 6× Molex; prefer genuine G2 peripheral cables
 cable-evga-g2-pcie-1660,OTHER,EVGA,G2/P2/T2 PCIe VGA,8-pin or 6+2 for 1660 SUPER,1,planned,bin,LimeTower,planned,From G2 kit (refurb has 6× VGA) — plug Slot4 1660 before load
 nvme-duo-dell,STORAGE,Dell,Ultra-Speed Duo,Dual M.2 PCIe carrier bifurcation,1,installed,knight,Knight,current,LLM cache / models
-nvme-kioxia-1,STORAGE,Kioxia,KXG70PNV2T04,2TB NVMe M.2 2280 PCIe Gen4 x4,1,installed,knight,Knight,current,cache btrfs raid0 (was id nvme-kioxia-xg8-1; model was wrongly XG8/KXG8AZNV2T04)
-nvme-kioxia-2,STORAGE,Kioxia,KXG70PNV2T04,2TB NVMe M.2 2280 PCIe Gen4 x4,1,installed,knight,Knight,current,cache btrfs raid0 (was id nvme-kioxia-xg8-2; model was wrongly XG8/KXG8AZNV2T04)
+nvme-kioxia-1,STORAGE,Kioxia,KXG70PNV2T04,2TB NVMe M.2 2280 PCIe Gen4 x4,1,installed,knight,Knight,current,Knight **LLM/models** pool (with nvme-kioxia-2); not appdata
+nvme-kioxia-2,STORAGE,Kioxia,KXG70PNV2T04,2TB NVMe M.2 2280 PCIe Gen4 x4,1,installed,knight,Knight,current,Knight **LLM/models** pool (with nvme-kioxia-1); not appdata
 gpu-p40-1,GPU,NVIDIA,Tesla P40,24GB GDDR5 Pascal passive,1,installed,knight,Knight,current,Define 7 XL + shrouds
 gpu-p40-2,GPU,NVIDIA,Tesla P40,24GB GDDR5 Pascal passive,1,installed,knight,Knight,current,Second P40
 usb-unraid-sandisk-trial,STORAGE,SanDisk,USB 3.2 Gen1,30.8GB Unraid boot flash trial,1,installed,knight,Knight,current,Unraid Trial boot; Knight 192.168.0.77
@@ -109,7 +109,7 @@ psu-evga-1000g1,PSU,EVGA,SuperNOVA 1000 G1,1000W 80+ Gold fully modular ATX,1,in
 ram-cmy16gx3m2a1866c9r,RAM,Corsair,CMY16GX3M2A1866C9R,Vengeance Pro DDR3-1866 2x8GB CL9 red,2,spare,bin,,,Pulled from CHRISTIAN-PC C70 2026-09-12; 2 kits = 4×8GB (32GB); photo: 2× ver8.22 + 2× ver3.24
 fan-cougar-cf-v12h,FAN,COUGAR,CF-V12H,120mm HDB Vortex 3-pin,2,installed,christian-pc,CHRISTIAN-PC,current,3-pin; in retired C70 box
 cooler-h100i-christian,COOLER,Corsair,H100i,240mm AIO,1,installed,christian-pc,CHRISTIAN-PC,current,Retired C70; separate from TOMB-PC H100i
-ssd-sandisk-sdssdx-240,STORAGE,SanDisk,SDSSDX-240G,240GB 2.5 SATA SSD,1,spare,bin,,,Pulled from retired CHRISTIAN-PC
+ssd-sandisk-sdssdx-240,STORAGE,SanDisk,SDSSDX-240G,240GB 2.5 SATA SSD,1,planned,knight,Knight,planned,Pulled from CHRISTIAN-PC; **Knight appdata/system pool** (separate from Kioxia LLM pool)
 hdd-wd-green-500-christian,STORAGE,Western Digital,WD Green 500GB,500GB 3.5 HDD,1,installed,christian-pc,CHRISTIAN-PC,current,Retired C70; exact WD Green SKU TBD
 gpu-rx6800-amd-desktop-aitbp8b,GPU,AMD,Radeon RX 6800,16GB GDDR6 Navi 21,1,installed,desktop-aitbp8b,DESKTOP-AITBP8B,current,Christian daily driver; board partner TBD — not Gigabyte on TOMB-PC-2077
 mb-ga-z87x-ud4h,MB,Gigabyte,GA-Z87X-UD4H,ATX LGA1150 Z87,1,installed,tomb-pc,TOMB-PC,current,Old Tom desktop; unused in corner
