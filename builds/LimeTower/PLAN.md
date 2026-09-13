@@ -26,7 +26,7 @@ SKU: **HGST Ultrastar DC HC520** `HUH721212ALE601` (`disk-lt-hc520-12tb`) — **
 | RAM → 192 / 256 GB | Matching **RC1** only |
 | NVIDIA driver | 1660 NVENC for Plex |
 | Fan curves | BMC Heavy IO / Unraid HDD-temp script |
-| Disks on **9305** | When filling more of 24 bays |
+| Disks on **9305** | When filling more of 24 bays — **SATA HDDs only** (breakouts are SATA plugs; SAS drives need different cabling) |
 | 10G switch | Still unboxed |
 | Cache upgrade | Optional; keep SX850 for now |
 | Inventory UI on LimeTower | Docker @ host `:8787` / `inventory.home` — see `deploy/UNRAID.md` (SWAG; Spekarr is host `:8788`) |
@@ -45,6 +45,8 @@ SKU: **HGST Ultrastar DC HC520** `HUH721212ALE601` (`disk-lt-hc520-12tb`) — **
 
 | Path | Role |
 |------|------|
-| 9305-16i → 8643→8087 | Up to **16** backplane bays |
+| 9305-16i → 8643→8087 | Up to **16** backplane bays (**SATA** drives on SATA breakouts) |
 | Onboard SATA → reverse breakout | Up to **8** more |
 | Today | All current array disks on **onboard SATA** |
+
+**Interface lock:** Chassis breakouts present **SATA** connectors → buy **SATA** enterprise pulls for growth. Cheaper **SAS** pulls are not usable without rewiring to SAS fanouts/backplane.
