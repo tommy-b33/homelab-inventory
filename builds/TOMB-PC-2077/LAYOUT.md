@@ -8,6 +8,13 @@
 | Tailscale | `100.96.138.79` | `tail1f7565.ts.net` |
 | Wi‑Fi (Intel AX200) | — | Disconnected; MAC `14-F6-D8-13-33-FA` |
 
+## Displays
+
+| Display | Connection | Notes |
+|---------|------------|-------|
+| Dell S3220DGF (`6S7TF43`) | GPU **DisplayPort** | 2560×1440 |
+| Dell S3220DGF (`F4BQM73`) | GPU **DisplayPort** | 2560×1440 |
+
 ## Chassis
 
 **Fractal Design Meshify C White TG** (`FD-CA-MESH-C-WT-TGC`).

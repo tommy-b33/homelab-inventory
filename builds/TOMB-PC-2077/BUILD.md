@@ -1,7 +1,7 @@
 # TOMB-PC-2077 (current)
 
 **Status:** online  
-**Last updated:** 2026-09-05  
+**Last updated:** 2026-09-13  
 **Phase:** current reality (daily driver desktop)
 
 ## Identity
@@ -30,6 +30,7 @@ Primary Windows desktop (Cursor / daily use). Not part of the Unraid Knight / Li
 | GPU | **Gigabyte Radeon RX 6800** | 16 GB GDDR6 |
 | PSU | **Super Flower Leadex III Gold 750 W** | 80+ Gold fully modular |
 | Storage | **2× Crucial P5 Plus 2 TB** NVMe | C: boot (`…002D`); D: data (`…0079`) |
+| Monitors | **2× Dell S3220DGF** | 31.5in 1440p 165Hz curved; both GPU DisplayPort |
 
 ## Open items
 

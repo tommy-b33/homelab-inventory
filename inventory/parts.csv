@@ -139,6 +139,8 @@ psu-thermaltake-tr2s-550,PSU,Thermaltake,TR2 S 550W,550W 80+ ATX,1,installed,cla
 odd-lg-gh24nsc0b,OTHER,LG,GH24NSC0B,DVD/CD writer,1,installed,claudia-pc,CLAUDIA-PC,current,Per PCPP
 monitor-acer-ed242qr-1,MONITOR,Acer,ED242QR wi,23.6in 1080p 75Hz FreeSync curved,1,installed,claudia-pc,CLAUDIA-PC,current,Current dual setup (HDMI+VGA)
 monitor-acer-ed242qr-2,MONITOR,Acer,ED242QR wi,23.6in 1080p 75Hz FreeSync curved,1,installed,claudia-pc,CLAUDIA-PC,current,Second of dual pair
+monitor-dell-s3220dgf-1,MONITOR,Dell,S3220DGF,31.5in 1440p 165Hz FreeSync curved VA,1,installed,tomb-pc-2077,TOMB-PC-2077,current,S/N 6S7TF43; GPU DisplayPort; dual with s3220dgf-2
+monitor-dell-s3220dgf-2,MONITOR,Dell,S3220DGF,31.5in 1440p 165Hz FreeSync curved VA,1,installed,tomb-pc-2077,TOMB-PC-2077,current,S/N F4BQM73; GPU DisplayPort; dual with s3220dgf-1
 printer-canon-lbp646cdw,OTHER,Canon,imageCLASS LBP646Cdw,Wireless color laser print-only 6929C008,1,spare,bin,,,Home office color laser
 switch-netgear-gs316pp,NIC,NETGEAR,GS316PP,16× 1GbE (10/100/1000) PoE+ rackmount GS316PP100NAS 183W,1,spare,bin,,,Waiting to be used
 amp-monoprice-16152,OTHER,Monoprice,Compact Stereo Hybrid Tube Amp,15W/ch Bluetooth 4.0 aptX P/N 16152,1,spare,bin,,,Tube pre + class AB; waiting to be used

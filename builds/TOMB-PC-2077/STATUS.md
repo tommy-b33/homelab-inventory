@@ -1,6 +1,6 @@
 # Status — TOMB-PC-2077 (current)
 
-**As of:** 2026-09-05
+**As of:** 2026-09-13
 
 ## Working
 
@@ -9,6 +9,7 @@
 - 2× Crucial P5 Plus 2 TB (C: / D:) healthy
 - Super Flower Leadex III Gold 750 W
 - DOCP/XMP enabled — RAM ~DDR4-3600
+- Dual **Dell S3220DGF** (31.5in 1440p) on GPU DisplayPort (`6S7TF43`, `F4BQM73`)
 
 ## Broken / blocked
 
